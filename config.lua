@@ -76,6 +76,7 @@ code_actions.setup {
 
 -- Enable auto-formatting on save
 lvim.format_on_save.enabled = true
+vim.opt.wrap = true
 
 -- Plugins
 lvim.plugins = {
