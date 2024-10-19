@@ -204,13 +204,12 @@ lvim.plugins = {
   {
     "sainnhe/sonokai",
     config = function()
-      vim.g.sonokai_style = 'atlantis'
+      vim.g.sonokai_style = 'andromeda'
       vim.g.sonokai_better_performance = 1
     end,
   },
   {
     'abecodes/tabout.nvim',
-    lazy = false,
     config = function()
       require('tabout').setup {
         tabkey = '<Tab>',             -- key to trigger tabout, set to an empty string to disable
