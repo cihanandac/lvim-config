@@ -31,32 +31,32 @@ lspconfig.pyright.setup({
 })
 
 -- Formatter configuration for Prettier and Black
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup({
---   {
---     -- Use Prettier for these file types
---     exe = "prettier",
---     filetypes = { "javascript", "typescript", "css", "scss", "html", "json", "yaml", "markdown" },
---   },
---   {
---     -- Use Black for Python files
---     exe = "black",
---     filetypes = { "python" },
---   },
--- })
 local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
-  { name = "black" },
+formatters.setup({
   {
+    -- Use Prettier for these file types
     name = "prettier",
-    ---@usage arguments to pass to the formatter
-    -- these cannot contain whitespace
-    -- options such as `--line-width 80` become either `{"--line-width", "80"}` or `{"--line-width=80"}`
-    args = { "--print-width", "100" },
-    ---@usage only start in these filetypes, by default it will attach to all filetypes it supports
-    filetypes = { "typescript", "typescriptreact" },
+    filetypes = { "javascript", "typescript", "css", "scss", "html", "json", "yaml", "markdown" },
   },
-}
+  {
+    -- Use Black for Python files
+    name = "black",
+    filetypes = { "python" },
+  },
+})
+-- local formatters = require "lvim.lsp.null-ls.formatters"
+-- formatters.setup {
+--   { name = "black" },
+--   {
+--     name = "prettier",
+--     ---@usage arguments to pass to the formatter
+--     -- these cannot contain whitespace
+--     -- options such as `--line-width 80` become either `{"--line-width", "80"}` or `{"--line-width=80"}`
+--     args = { "--print-width", "100" },
+--     ---@usage only start in these filetypes, by default it will attach to all filetypes it supports
+--     filetypes = { "typescript", "typescriptreact" },
+--   },
+-- }
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
