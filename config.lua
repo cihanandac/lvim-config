@@ -5,6 +5,9 @@
 lvim.keys.normal_mode["<S-h>"] = ":bprevious<CR>"
 lvim.keys.normal_mode["<S-l>"] = ":bnext<CR>"
 
+lvim.builtin.nvimtree.setup.view.side = "right"
+lvim.builtin.nvimtree.setup.view.width = 45
+
 -- Leader key + - for horizontal split
 lvim.builtin.which_key.mappings["-"] = { ":split<CR>", "Horizontal Split" }
 -- Leader key + | for vertical split
