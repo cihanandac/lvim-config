@@ -2,9 +2,12 @@
 -- Example configs: https://github.com/LunarVim/starter.lvim
 -- Video Tutorials: https://www.youtube.com/watch?v=sFA9kX-Ud_c&list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6
 -- Forum: https://www.reddit.com/r/lunarvim/
+
+-- Use shift h and l for moving to next/previous buffer
 lvim.keys.normal_mode["<S-h>"] = ":bprevious<CR>"
 lvim.keys.normal_mode["<S-l>"] = ":bnext<CR>"
 
+-- nvimtree appears on the rigth side of the screen
 lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.nvimtree.setup.view.width = 45
 
@@ -16,8 +19,10 @@ lvim.builtin.which_key.mappings["|"] = { ":vsplit<CR>", "Vertical Split" }
 -- Add ts supprort for the lsp
 lvim.lsp.installer.setup.ensure_installed = { "tsserver" }
 
--- Disable tsserver formatting so Prettier can handle it
+-- Define lspconfig
 local lspconfig = require("lspconfig")
+
+-- Disable tsserver formatting so Prettier can handle it
 lspconfig.tsserver.setup({
   on_attach = function(client)
     -- Disable LSP formatting to allow Prettier to handle formatting
@@ -47,19 +52,6 @@ formatters.setup({
     filetypes = { "python" },
   },
 })
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   { name = "black" },
---   {
---     name = "prettier",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespace
---     -- options such as `--line-width 80` become either `{"--line-width", "80"}` or `{"--line-width=80"}`
---     args = { "--print-width", "100" },
---     ---@usage only start in these filetypes, by default it will attach to all filetypes it supports
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
