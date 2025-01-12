@@ -73,6 +73,19 @@ code_actions.setup {
 lvim.format_on_save.enabled = true
 vim.opt.wrap = true
 
+-- Autocomplete suggestions
+local cmp = require('cmp')
+
+cmp.setup({
+  mapping = {
+    ['<C-j>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+    ['<C-k>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+    ['<C-Space>'] = cmp.mapping.complete(), -- Trigger suggestions manually
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Confirm the selected suggestion
+    ['<Tab>'] = nil, -- Disable Tab for LSP suggestions
+  },
+})
+
 -- Plugins
 lvim.plugins = {
   {
@@ -270,7 +283,12 @@ lvim.plugins = {
         debug = false,
       }
     end,
-  }
+  },
+  { "nvzone/timerly", 
+    dependencies = {
+      "nvzone/volt",
+    } 
+  },
 }
 
 -- Theme choice
