@@ -196,6 +196,7 @@ lvim.plugins = {
       })
     end
   },
+  
   {
     "princejoogie/dir-telescope.nvim",
     -- telescope.nvim is a required dependency
@@ -210,6 +211,7 @@ lvim.plugins = {
       })
     end,
   },
+
   {
     "sainnhe/sonokai",
     config = function()
@@ -217,13 +219,13 @@ lvim.plugins = {
       vim.g.sonokai_better_performance = 1
     end,
   },
+
   {
     'abecodes/tabout.nvim',
     config = function()
       require('tabout').setup {
         tabkey = '<Tab>',             -- key to trigger tabout, set to an empty string to disable
-        backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
-        act_as_tab = true,            -- shift content if tab out is not possible
+        backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable act_as_tab = true,            -- shift content if tab out is not possible
         act_as_shift_tab = false,     -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
         default_tab = '<C-t>',        -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
         default_shift_tab = '<C-d>',  -- reverse shift default action,
@@ -250,6 +252,7 @@ lvim.plugins = {
     event = 'InsertCharPre', -- Set the event to 'InsertCharPre' for better compatibility
     priority = 1000,
   },
+
   {
     "L3MON4D3/LuaSnip",
     keys = function()
@@ -257,6 +260,7 @@ lvim.plugins = {
       return {}
     end,
   },
+
   {
     "okuuva/auto-save.nvim",
     version = '^1.0.0',                       -- see https://devhints.io/semver, alternatively use '*' to use the latest tagged release
@@ -284,12 +288,23 @@ lvim.plugins = {
       }
     end,
   },
+
   { "nvzone/timerly", 
     dependencies = {
       "nvzone/volt",
-    } 
+    },
+    config = {
+      minutes = { 25, 5 },
+      on_finish = function()
+        vim.notify "Timerly: time's up!"
+      end,
+      position = "top-right", -- top-left, top-right, bottom-left, bottom-right
+      -- or function(w, h) return row, col end , w - w of window, arg passed by plugin
+    },
   },
 }
 
 -- Theme choice
 lvim.colorscheme = 'sonokai'
+
+
