@@ -209,6 +209,10 @@ lvim.plugins = {
         show_preview = true,
         follow_symlinks = false,
       })
+      lvim.builtin.which_key.mappings["sd"] = {
+        ":GrepInDirectory<CR>",
+        "Grep In Directory"
+      }
     end,
   },
 
