@@ -284,8 +284,24 @@ lvim.plugins = {
 
   {
     "ggandor/leap.nvim",
-    keys = {}
-  }, 
+    config = function()
+      local leap = require("leap")
+      leap.add_default_mappings()
+
+      -- Map the `s` key for leap in normal and visual modes
+      vim.keymap.set({ "n", "x", "o" }, "s", function()
+        leap.leap({ target_windows = { vim.fn.win_getid() } })
+      end, { desc = "Leap forward to a target" })
+
+      -- Optional: Map `S` for backward leap
+      vim.keymap.set({ "n", "x", "o" }, "S", function()
+        leap.leap({ backward = true, target_windows = { vim.fn.win_getid() } })
+      end, { desc = "Leap backward to a target" })
+    end,
+    event = "BufReadPost", -- Load the plugin when a buffer is read
+    lazy = true, -- Enable lazy loading for performance
+    priority = 1000, -- Ensure it loads in a predictable order
+  },
 
   {
     "folke/trouble.nvim",
