@@ -3,6 +3,14 @@
 -- Video Tutorials: https://www.youtube.com/watch?v=sFA9kX-Ud_c&list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6
 -- Forum: https://www.reddit.com/r/lunarvim/
 
+-- Map "gl" to move to the end of the line (like $)
+lvim.keys.normal_mode["gl"] = "$"
+lvim.keys.visual_mode["gl"] = "$"
+
+-- Map "gh" to move to the beginning of the line (like ^)
+lvim.keys.normal_mode["gh"] = "^"
+lvim.keys.visual_mode["gh"] = "^"
+
 -- Use shift h and l for moving to next/previous buffer
 lvim.keys.normal_mode["<S-h>"] = ":bprevious<CR>"
 lvim.keys.normal_mode["<S-l>"] = ":bnext<CR>"
