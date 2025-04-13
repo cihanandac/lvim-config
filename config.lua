@@ -90,7 +90,8 @@ cmp.setup({
     ['<C-k>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
     ['<C-Space>'] = cmp.mapping.complete(), -- Trigger suggestions manually
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Confirm the selected suggestion
-    ['<Tab>'] = cmp.config.disable, -- Disable Tab for LSP suggestions
+    ['<Tab>'] = vim.NIL,
+    ['<S-Tab>'] = vim.NIL,
   },
 })
 
