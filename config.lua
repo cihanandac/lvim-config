@@ -4,12 +4,12 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 
 -- Map "gl" to move to the end of the line (like $)
-lvim.keys.normal_mode["gl"] = "$"
-lvim.keys.visual_mode["gl"] = "$"
+-- lvim.keys.normal_mode["gl"] = "$"
+-- lvim.keys.visual_mode["gl"] = "$"
 
 -- Map "gh" to move to the beginning of the line (like ^)
-lvim.keys.normal_mode["gh"] = "^"
-lvim.keys.visual_mode["gh"] = "^"
+-- lvim.keys.normal_mode["gh"] = "^"
+-- lvim.keys.visual_mode["gh"] = "^"
 
 -- Use shift h and l for moving to next/previous buffer
 lvim.keys.normal_mode["<S-h>"] = ":bprevious<CR>"
@@ -374,16 +374,16 @@ lvim.plugins = {
         "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
         desc = "Buffer Diagnostics (Trouble)",
       },
-      {
-        "<leader>cs",
-        "<cmd>Trouble symbols toggle focus=false<cr>",
-        desc = "Symbols (Trouble)",
-      },
-      {
-        "<leader>cl",
-        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-        desc = "LSP Definitions / references / ... (Trouble)",
-      },
+      -- {
+      --  "<leader>cs",
+      --   "<cmd>Trouble symbols toggle focus=false<cr>",
+      --   desc = "Symbols (Trouble)",
+      -- },
+      -- {
+      --   "<leader>cl",
+      --   "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+      --   desc = "LSP Definitions / references / ... (Trouble)",
+      -- },
       {
         "<leader>xL",
         "<cmd>Trouble loclist toggle<cr>",
